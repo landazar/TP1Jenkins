@@ -32,7 +32,7 @@ public class Voyageur {
 	private int age;
 	
 	@Exclude
-	@OneToMany(mappedBy = "reservation")
+	@OneToMany(mappedBy = "voyageur")
 	private List<Reservation> listeR;
 	
 	public Voyageur(@NonNull String nom, @NonNull String prenom, int age) {
@@ -46,8 +46,6 @@ public class Voyageur {
 		super();
 		this.age = age;
 	}
-	
-	
 	
 	
 

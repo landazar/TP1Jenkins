@@ -41,7 +41,7 @@ public class VoyageurRepositoryTest {
 		public void saveVoyageurSansRequiredTest()
 		{
 			//given
-			Voyageur v1 = new Voyageur(3);
+			Voyageur v1 = new Voyageur(20);
 			
 			//when
 			//then

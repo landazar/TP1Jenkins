@@ -40,6 +40,6 @@ public class Reservation {
 	@Exclude
 	@ManyToOne
 	@JoinColumn(name = "id_reservation")
-	private Reservation reservation;
+	private Voyageur voyageur;
 
 }
