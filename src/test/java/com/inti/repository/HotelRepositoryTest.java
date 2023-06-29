@@ -129,8 +129,8 @@ public class HotelRepositoryTest {
 	public void getHotelTest()
 	{
 		//given
-		Hotel c1 = new Hotel("Papilon lagoon", 3);
-		Hotel hotelSaved = ihr.save(c1);
+		Hotel h1 = new Hotel("Papilon lagoon", 3);
+		Hotel hotelSaved = ihr.save(h1);
 		//when
 		Hotel hotel = ihr.getReferenceById(hotelSaved.getId());
 		
