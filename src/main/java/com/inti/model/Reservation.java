@@ -1,6 +1,6 @@
 package com.inti.model;
 
-import java.util.List;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,34 +20,21 @@ import lombok.ToString.Exclude;
 @Entity
 @Table
 @Data @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
-public class Hotel {
+public class Reservation {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(nullable = false)
 	@NonNull
-	private String nom;
-	private int nbEtoile;
-	
-	public Hotel(@NonNull String nom, int nbEtoile) {
-		super();
-		this.nom = nom;
-		this.nbEtoile = nbEtoile;
-	}
-
-	public Hotel(int nbEtoile) {
-		super();
-		this.nbEtoile = nbEtoile;
-	}
+	private LocalDate date;
+	@Column(nullable = false)
+	@NonNull
+	private int nbJours;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_destination")
+	@JoinColumn(name = "id_hotel")
 	@Exclude
-	private Destination destination;
-	
-	@OneToMany(mappedBy = "hotel")
-	@Exclude
-	private List<Reservation> listeR;
+	private Hotel hotel;
 
 }
