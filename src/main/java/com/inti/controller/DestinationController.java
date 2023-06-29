@@ -42,7 +42,7 @@ public class DestinationController {
 	@GetMapping("modifierDestination/{id}")
 	public String modifierDestination(@PathVariable("id") long id, Model m)
 	{
-		m.addAttribute("Destination", idr.getReferenceById(id));
+		m.addAttribute("destination", idr.getReferenceById(id));
 		return "modifierDestination";
 	}
 	
