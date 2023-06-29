@@ -30,6 +30,11 @@ public class Hotel {
 		this.nom = nom;
 		this.nbEtoile = nbEtoile;
 	}
+
+	public Hotel(int nbEtoile) {
+		super();
+		this.nbEtoile = nbEtoile;
+	}
 	
 	
 
